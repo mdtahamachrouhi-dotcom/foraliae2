@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Aliae 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink-main: #ff758f;
+            --pink-soft: #ffb3c1;
+            --pink-bg: #fff0f3;
+            --white-pure: #ffffff;
+            --text-color: #4a3b40;
+            --accent-rose: #ff4d6d;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ffe5ec;
+            font-family: 'Quicksand', sans-serif;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Modern Animated Mesh Background Blobs */
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            opacity: 0.65;
+            animation: floatBlob 9s infinite alternate ease-in-out;
+            z-index: 0;
+        }
+
+        .blob-1 {
+            width: 320px;
+            height: 320px;
+            background: #ff4d6d;
+            top: 5%;
+            left: 10%;
+        }
+
+        .blob-2 {
+            width: 380px;
+            height: 380px;
+            background: #ffb3c1;
+            bottom: 5%;
+            right: 10%;
+            animation-delay: -4s;
+        }
+
+        .blob-3 {
+            width: 280px;
+            height: 280px;
+            background: #ff758f;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -2s;
+        }
+
+        @keyframes floatBlob {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, 50px) scale(1.18); }
+        }
+
+        /* Floating Background Hearts */
+        .bg-heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 10px rgba(255, 77, 109, 0.4);
+            font-size: 20px;
+            animation: floatUp 7s infinite linear;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.8); opacity: 0; }
+            50% { opacity: 0.9; }
+            100% { transform: translateY(-10vh) rotate(360deg) scale(1.2); opacity: 0; }
+        }
+
+        /* Main Glassmorphic Card */
+        .card-container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 2px solid rgba(255, 255, 255, 0.9);
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(255, 77, 109, 0.25);
+            max-width: 480px;
+            width: 100%;
+            padding: 38px 26px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .chibi-avatar {
+            font-size: 45px;
+            margin-bottom: 6px;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffe5ec;
+            color: var(--accent-rose);
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            border: 1px solid #ffb3c1;
+        }
+
+        .main-title {
+            font-size: 27px;
+            color: #c9184a;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .sub-title-latin {
+            font-family: 'Caveat', cursive;
+            font-size: 34px;
+            color: var(--accent-rose);
+            margin-bottom: 18px;
+        }
+
+        .divider {
+            width: 55px;
+            height: 3px;
+            background: linear-gradient(90deg, #ff8fa3, #ff4d6d);
+            margin: 0 auto 20px auto;
+            border-radius: 2px;
+        }
+
+        /* Content Sections */
+        .section-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 18px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 15px rgba(255, 204, 213, 0.3);
+            border: 1.5px solid #fff0f3;
+            text-align: center;
+        }
+
+        .section-box h3 {
+            color: #a4133c;
+            font-size: 18px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .section-box p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #4a3b40;
+            font-weight: 600;
+        }
+
+        .highlight-text {
+            color: #ff4d6d;
+            font-weight: 700;
+        }
+
+        .tag-girl {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff8fa3, #ff4d6d);
+            color: white;
+            font-family: 'Caveat', cursive;
+            font-size: 28px;
+            padding: 2px 22px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* Final Promise Box */
+        .promise-box {
+            background: linear-gradient(135deg, #ffe5ec 0%, #ffffff 100%);
+            border: 2px dashed #ff8fa3;
+            border-radius: 20px;
+            padding: 20px 16px;
+            margin-top: 20px;
+        }
+
+        .promise-box p {
+            font-size: 15px;
+            font-weight: 700;
+            color: #800f2f;
+        }
+
+        .final-quote {
+            font-family: 'Caveat', cursive;
+            font-size: 28px;
+            color: #ff4d6d;
+            font-weight: 700;
+            margin-top: 6px;
+            display: block;
+        }
+
+        /* Cute Button */
+        .btn-surprise {
+            background: linear-gradient(45deg, #ff4d6d, #ff758f);
+            color: white;
+            border: none;
+            padding: 13px 28px;
+            font-size: 15px;
+            font-weight: 700;
+            font-family: 'Quicksand', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 6px 18px rgba(255, 77, 109, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-surprise:hover {
+            transform: translateY(-2px) scale(1.03);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.35);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 25px;
+            padding: 25px;
+            max-width: 360px;
+            width: 100%;
+            text-align: center;
+            border: 2px solid #ffccd5;
+        }
+
+        .close-btn {
+            background: #ff8fa3;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Quicksand', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Animated Background Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Floating Hearts -->
+    <div id="hearts-container"></div>
+
+    <div class="card-container">
+        <div class="chibi-avatar">🎀 🌸 ✨</div>
+        <div class="badge">A Special Message For You</div>
+        <h1 class="main-title">To The Most Amazing Person</h1>
+        <div class="sub-title-latin">For Aliae 💖</div>
+        
+        <div class="divider"></div>
+
+        <!-- Section 1: Beauty -->
+        <div class="section-box">
+            <h3>🌸 How Beautiful You Are...</h3>
+            <p>
+                Just a little reminder that you are not just pretty, you are <span class="highlight-text">truly gorgeous</span>! In your smile, your eyes, and in everything you do. Your beauty is effortless and unique.
+            </p>
+        </div>
+
+        <!-- Section 2: Little Girl -->
+        <div class="section-box">
+            <span class="tag-girl">✨ Little Girl ✨</span>
+            <p>
+                You are my sweet person who always brings pure happiness to my heart, making every single moment brighter and sweeter.
+            </p>
+        </div>
+
+        <!-- Section 3: Final Promise -->
+        <div class="promise-box">
+            <p>Keep these words close to your heart:</p>
+            <span class="final-quote">"You will always be my little girl 💖"</span>
+        </div>
+
+        <button class="btn-surprise" onclick="openModal()">Click Here ✨</button>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="modal" id="surpriseModal">
+        <div class="modal-content">
+            <div style="font-size: 40px; margin-bottom: 8px;">👑🌸💖</div>
+            <h2 style="color: #c9184a; font-size: 19px; margin-bottom: 8px;">A Gentle Reminder!</h2>
+            <p style="color: #4a3b40; font-size: 14.5px; line-height: 1.6; font-weight: 600;">
+                Keep smiling and stay happy, because your smile is literally the prettiest thing ever! 🌷
+            </p>
+            <button class="close-btn" onclick="closeModal()">Close 💕</button>
+        </div>
+    </div>
+
+    <script>
+        const heartsContainer = document.getElementById('hearts-container');
+        const heartIcons = ['💖', '🌸', '✨', '💕', '🤍'];
+
+        for (let i = 0; i < 22; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'bg-heart';
+            heart.innerText = heartIcons[Math.floor(Math.random() * heartIcons.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 4 + 5) + 's';
+            heart.style.animationDelay = (Math.random() * 4) + 's';
+            heart.style.fontSize = (Math.random() * 14 + 14) + 'px';
+            heartsContainer.appendChild(heart);
+        }
+
+        function openModal() {
+            document.getElementById('surpriseModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('surpriseModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
